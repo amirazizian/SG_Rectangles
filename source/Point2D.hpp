@@ -1,6 +1,8 @@
 #ifndef Point2D_HPP
 #define Point2D_HPP
 
+using namespace std;
+
 class Point2D
 {
     public: 

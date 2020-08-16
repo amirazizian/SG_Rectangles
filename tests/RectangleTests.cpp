@@ -1,11 +1,25 @@
 #include <gtest/gtest.h>
-#include "../source/Point2D.hpp"
 #include "../source/Rectangle.hpp"
+using namespace std;
 
 TEST(RectangleTests, ConstructorShouldSetBottomLeftCorner)
 {
-    Rectangle rectangle = Rectangle(2.6f, 3.7f, 5.7f, 6.8f);
+    Point2D startingPoint = Point2D(2.6, 3.7);
+    
+    Rectangle rectangle = Rectangle(startingPoint, 5.7, 6.8);
+    
     Point2D bottomLeftCorner = rectangle.GetBottomLeftCorner();
-    ASSERT_EQ(2.6f, bottomLeftCorner.getX());
-    ASSERT_EQ(3.7f, bottomLeftCorner.getY());
+    ASSERT_FLOAT_EQ(2.6, bottomLeftCorner.getX());
+    ASSERT_FLOAT_EQ(3.7, bottomLeftCorner.getY());
+}
+
+TEST(RectangleTests, ConstructorShouldSetBottomRightCorner)
+{
+    Point2D startingPoint = Point2D(2.6, 3.7);
+    
+    Rectangle rectangle = Rectangle(startingPoint, 5.7, 6.8);
+    
+    Point2D bottomRightCorner = rectangle.GetBottomRightCorner();
+    ASSERT_FLOAT_EQ(8.3, bottomRightCorner.getX());
+    ASSERT_FLOAT_EQ(3.7, bottomRightCorner.getY());
 }
