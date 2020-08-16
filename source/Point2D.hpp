@@ -10,6 +10,7 @@ class Point2D
         Point2D(float x, float y);
         Point2D(const Point2D &p);
         ~Point2D();
+        bool operator== (const Point2D& rhs);
         float getX();
         float getY();
     

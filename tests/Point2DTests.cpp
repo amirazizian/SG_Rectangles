@@ -29,12 +29,36 @@ TEST_F(Point2DTests, ConstructorShouldInitiateY)
 
 TEST_F(Point2DTests, CopyConstructorShouldInitiateSameX)
 {
-    Point2D actual = Point2D(*point);
-    ASSERT_FLOAT_EQ(point -> getX(), actual.getX());
+    Point2D copy = Point2D(*point);
+    ASSERT_FLOAT_EQ(point -> getX(), copy.getX());
 }
 
 TEST_F(Point2DTests, CopyConstructorShouldInitiateSameY)
 {
-    Point2D actual = Point2D(*point);
-    ASSERT_FLOAT_EQ(point -> getY(), actual.getY());
+    Point2D copy = Point2D(*point);
+    ASSERT_FLOAT_EQ(point -> getY(), copy.getY());
+}
+
+TEST_F(Point2DTests, EqualityOperatorShouldReturnFalseWhenXIsNotSameAndYIsSame)
+{
+    Point2D notEqual = Point2D(0, point -> getY());
+    ASSERT_FALSE(notEqual == *point);
+}
+
+TEST_F(Point2DTests, EqualityOperatorShouldReturnFalseWhenXIsSameAndYIsNotSame)
+{
+    Point2D notEqual = Point2D(point -> getX(), 0);
+    ASSERT_FALSE(notEqual == *point);
+}
+
+TEST_F(Point2DTests, EqualityOperatorShouldReturnFalseWhenBothXAndYAreNotSame)
+{
+    Point2D notEqual = Point2D(300, 0);
+    ASSERT_FALSE(notEqual == *point);
+}
+
+TEST_F(Point2DTests, EqualityOperatorShouldReturnTrueWhenBothXAndYAreSame)
+{
+    Point2D equal = Point2D(point -> getX(), point -> getY());
+    ASSERT_TRUE(equal == *point);
 }

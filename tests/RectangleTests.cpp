@@ -45,3 +45,9 @@ TEST_F(RectangleTests, ConstructorShouldSetTopRightCorner)
     ASSERT_FLOAT_EQ(8.3, topRightCorner.getX());
     ASSERT_FLOAT_EQ(10.5, topRightCorner.getY());
 }
+
+TEST_F(RectangleTests, CopyConstructorShouldSetSameCorners)
+{
+    // Rectangle copy = Rectangle(rectangle);
+    // ASSERT_FLOAT_EQ(copy.GetBottomLeftCorner().getX());
+}
