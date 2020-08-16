@@ -9,7 +9,6 @@ struct RectangleTests : public ::testing::Test
     virtual void SetUp() override
     {
         Point2D startingPoint = Point2D(2.6, 3.7);
-    
         rectangle = new Rectangle(startingPoint, 5.7, 6.8);
     }
 
@@ -31,4 +30,11 @@ TEST_F(RectangleTests, ConstructorShouldSetBottomRightCorner)
     Point2D bottomRightCorner = rectangle -> GetBottomRightCorner();
     ASSERT_FLOAT_EQ(8.3, bottomRightCorner.getX());
     ASSERT_FLOAT_EQ(3.7, bottomRightCorner.getY());
+}
+
+TEST_F(RectangleTests, ConstructorShouldSetTopLeftCorner)
+{
+    Point2D topLeftCorner = rectangle -> GetTopLeftCorner();
+    ASSERT_FLOAT_EQ(2.6, topLeftCorner.getX());
+    ASSERT_FLOAT_EQ(10.5, topLeftCorner.getY());
 }
