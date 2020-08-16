@@ -46,8 +46,26 @@ TEST_F(RectangleTests, ConstructorShouldSetTopRightCorner)
     ASSERT_FLOAT_EQ(10.5, topRightCorner.getY());
 }
 
-TEST_F(RectangleTests, CopyConstructorShouldSetSameCorners)
+TEST_F(RectangleTests, CopyConstructorShouldSetSameGetBottomLeftCorner)
 {
-    // Rectangle copy = Rectangle(rectangle);
-    // ASSERT_FLOAT_EQ(copy.GetBottomLeftCorner().getX());
+    Rectangle copy = Rectangle(*rectangle);
+    ASSERT_TRUE(copy.GetBottomLeftCorner() == rectangle -> GetBottomLeftCorner());
+}
+
+TEST_F(RectangleTests, CopyConstructorShouldSetSametBottomRightCorner)
+{
+    Rectangle copy = Rectangle(*rectangle);
+    ASSERT_TRUE(copy.GetBottomRightCorner() == rectangle -> GetBottomRightCorner());
+}
+
+TEST_F(RectangleTests, CopyConstructorShouldSetSameTopLeftCorner)
+{
+    Rectangle copy = Rectangle(*rectangle);
+    ASSERT_TRUE(copy.GetTopLeftCorner() == rectangle -> GetTopLeftCorner());
+}
+
+TEST_F(RectangleTests, CopyConstructorShouldSetSameTopRightCorner)
+{
+    Rectangle copy = Rectangle(*rectangle);
+    ASSERT_TRUE(copy.GetTopRightCorner() == rectangle -> GetTopRightCorner());
 }

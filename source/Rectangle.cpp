@@ -9,6 +9,14 @@ Rectangle::Rectangle(Point2D startingPoint, float width, float length)
     topRightCorner = Point2D(startingPoint.getX() + width, startingPoint.getY() + length);
 }
 
+Rectangle::Rectangle(const Rectangle & r)
+{
+    bottomLeftCorner = r.bottomLeftCorner;
+    bottomRightCorner = r.bottomRightCorner;
+    topLeftCorner = r.topLeftCorner;
+    topRightCorner = r.topRightCorner;
+}
+
 Rectangle::~Rectangle()
 {
 }

@@ -9,6 +9,7 @@ class Rectangle
     public: 
 
         Rectangle(Point2D startingPoint, float width, float length);
+        Rectangle(const Rectangle & r);
         ~Rectangle();
         Point2D GetBottomLeftCorner();
         Point2D GetBottomRightCorner();

@@ -19,9 +19,9 @@ Point2D::Point2D(const Point2D & p){
 
 Point2D::~Point2D(){}
 
-bool Point2D::operator== (const Point2D& rhs)
+bool Point2D::operator== (const Point2D& p)
 {
-    return x == rhs.x && y == rhs.y;
+    return x == p.x && y == p.y;
 }
 
 float Point2D::getX()
