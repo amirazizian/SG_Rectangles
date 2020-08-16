@@ -13,12 +13,14 @@ class Rectangle
         Point2D GetBottomLeftCorner();
         Point2D GetBottomRightCorner();
         Point2D GetTopLeftCorner();
+        Point2D GetTopRightCorner();
     
     private:  
 
         Point2D bottomLeftCorner;
         Point2D bottomRightCorner;
         Point2D topLeftCorner;
+        Point2D topRightCorner;
 };
 
 #endif

@@ -6,6 +6,7 @@ Rectangle::Rectangle(Point2D startingPoint, float width, float length)
     bottomLeftCorner = Point2D(startingPoint);
     bottomRightCorner = Point2D(startingPoint.getX() + width, startingPoint.getY());
     topLeftCorner = Point2D(startingPoint.getX(), startingPoint.getY() + length);
+    topRightCorner = Point2D(startingPoint.getX() + width, startingPoint.getY() + length);
 }
 
 Rectangle::~Rectangle()
@@ -25,4 +26,9 @@ Point2D Rectangle::GetBottomRightCorner()
 Point2D Rectangle::GetTopLeftCorner()
 {
     return topLeftCorner;
+}
+
+Point2D Rectangle::GetTopRightCorner()
+{
+    return topRightCorner;
 }

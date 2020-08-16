@@ -38,3 +38,10 @@ TEST_F(RectangleTests, ConstructorShouldSetTopLeftCorner)
     ASSERT_FLOAT_EQ(2.6, topLeftCorner.getX());
     ASSERT_FLOAT_EQ(10.5, topLeftCorner.getY());
 }
+
+TEST_F(RectangleTests, ConstructorShouldSetTopRightCorner)
+{
+    Point2D topRightCorner = rectangle -> GetTopRightCorner();
+    ASSERT_FLOAT_EQ(8.3, topRightCorner.getX());
+    ASSERT_FLOAT_EQ(10.5, topRightCorner.getY());
+}
