@@ -1,4 +1,10 @@
 #include "Point2D.hpp"
+using namespace std;
+
+Point2D::Point2D()
+{
+    x = y = 0.0f;
+}
 
 Point2D::Point2D(float x, float y)
 {
