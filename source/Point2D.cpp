@@ -6,6 +6,11 @@ Point2D::Point2D(float x, float y)
     this -> y = y;
 }
 
+Point2D::Point2D(const Point2D & p){
+    x = p.x;
+    y = p.y;
+}
+
 Point2D::~Point2D(){}
 
 float Point2D::getX()
