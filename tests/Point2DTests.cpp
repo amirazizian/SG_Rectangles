@@ -1,28 +1,39 @@
 #include<gtest/gtest.h>
 #include "../source/Point2D.hpp"
 
-TEST(Point2DTests, ConstructorShouldInitiateX)
+struct Point2DTests : public ::testing::Test
 {
-    Point2D point = Point2D(2.7f, 0.0f);
-    ASSERT_EQ(2.7f, point.getX());
+    Point2D* point;
+
+    virtual void SetUp() override
+    {
+        point = new Point2D(2.7f, 4.8f);
+    }
+
+    virtual void TearDown() override 
+    {
+        delete point;
+    }
+};
+
+TEST_F(Point2DTests, ConstructorShouldInitiateX)
+{
+    ASSERT_EQ(2.7f, point -> getX());
 }
 
-TEST(Point2DTests, ConstructorShouldInitiateY)
+TEST_F(Point2DTests, ConstructorShouldInitiateY)
 {
-    Point2D point = Point2D(2.7f, 4.8f);
-    ASSERT_EQ(4.8f, point.getY());
+    ASSERT_EQ(4.8f, point -> getY());
 }
 
-TEST(Point2DTests, CopyConstructorShouldInitiateSameX)
+TEST_F(Point2DTests, CopyConstructorShouldInitiateSameX)
 {
-    Point2D expected = Point2D(2.7f, 4.8f);
-    Point2D actual = Point2D(expected);
-    ASSERT_EQ(expected.getX(), actual.getX());
+    Point2D actual = Point2D(*point);
+    ASSERT_EQ(point -> getX(), actual.getX());
 }
 
-TEST(Point2DTests, CopyConstructorShouldInitiateSameY)
+TEST_F(Point2DTests, CopyConstructorShouldInitiateSameY)
 {
-    Point2D expected = Point2D(2.7f, 4.8f);
-    Point2D actual = Point2D(expected);
-    ASSERT_EQ(expected.getY(), actual.getY());
+    Point2D actual = Point2D(*point);
+    ASSERT_EQ(point -> getY(), actual.getY());
 }
